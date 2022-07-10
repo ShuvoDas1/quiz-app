@@ -1,10 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 
 const Answer = ({ answers }) => {
-  console.log({ answers });
   return (
-    <div>
+    <div data-testid="answer">
       {answers?.map((answer, index) => (
         <div key={index} className="mt-4">
           <h4>
@@ -15,9 +13,6 @@ const Answer = ({ answers }) => {
             (item, index) => (
               <div
                 key={index}
-                // yourAnswer={answer.yourAnswer}
-                // option={item}
-                // correctAnswer={answer?.correct_answer}
                 style={{
                   backgroundColor:
                     answer?.correct_answer === item

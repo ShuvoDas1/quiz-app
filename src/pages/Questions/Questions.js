@@ -9,7 +9,6 @@ import {
   getAllQuestions,
   submitAnswer,
 } from "../../store/quiz/quizAction";
-import { Wrapper } from "../Home/Home";
 
 const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -81,6 +80,7 @@ const Questions = () => {
         <CardBody>
           {questions && !loading ? (
             <Question
+              data-testid="question"
               questions={questions}
               currentQuestion={currentQuestion}
               goToPrevious={goToPrevious}
