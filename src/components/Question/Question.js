@@ -14,12 +14,12 @@ const Question = ({
   return (
     <div>
       <h2>
-        {currentQuestion + 1}.{questions[currentQuestion].question}
+        {currentQuestion + 1}.{questions[currentQuestion]?.question}
       </h2>
       <hr />
       {[
         ...questions[currentQuestion]?.incorrect_answers,
-        questions[currentQuestion].correct_answer,
+        questions[currentQuestion]?.correct_answer,
       ]?.map((option, index) => (
         <div key={index} className="form-check">
           <input
@@ -46,7 +46,7 @@ const Question = ({
           )}
         </div>
         <div>
-          {currentQuestion + 1 < questions.length && !answer && (
+          {currentQuestion + 1 < questions?.length && !answer && (
             <Button
               onClick={skipQus}
               color="info"
@@ -56,13 +56,13 @@ const Question = ({
               Skip
             </Button>
           )}
-          {currentQuestion + 1 < questions.length && (
+          {currentQuestion + 1 < questions?.length && (
             <Button onClick={goToNext} color="success">
               Next
             </Button>
           )}
 
-          {currentQuestion + 1 === questions.length && (
+          {currentQuestion + 1 === questions?.length && (
             <Button color="success" onClick={submit}>
               Submit
             </Button>
