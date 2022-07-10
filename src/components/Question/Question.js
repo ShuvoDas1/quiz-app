@@ -17,26 +17,27 @@ const Question = ({
         {currentQuestion + 1}.{questions[currentQuestion]?.question}
       </h2>
       <hr />
-      {[
-        ...questions[currentQuestion]?.incorrect_answers,
-        questions[currentQuestion]?.correct_answer,
-      ]?.map((option, index) => (
-        <div key={index} className="form-check">
-          <input
-            className="form-check-input"
-            type="radio"
-            name="flexRadioDefault"
-            id="flexRadioDefault1"
-            value={option}
-            style={{ cursor: "pointer" }}
-            onChange={handleChange}
-            checked={answer === option ? true : false}
-          />
-          <label className="form-check-label" htmlFor="flexRadioDefault1">
-            {option}
-          </label>
-        </div>
-      ))}
+      {questions.length > 0 &&
+        [
+          ...questions[currentQuestion]?.incorrect_answers,
+          questions[currentQuestion]?.correct_answer,
+        ]?.map((option, index) => (
+          <div key={index} className="form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+              value={option}
+              style={{ cursor: "pointer" }}
+              onChange={handleChange}
+              checked={answer === option ? true : false}
+            />
+            <label className="form-check-label" htmlFor="flexRadioDefault1">
+              {option}
+            </label>
+          </div>
+        ))}
       <div className="d-flex justify-content-between mt-3">
         <div>
           {currentQuestion > 0 && (

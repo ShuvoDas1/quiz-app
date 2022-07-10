@@ -1,14 +1,9 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Button, Card, CardBody, Spinner } from "reactstrap";
 import Question from "../../components/Question/Question";
-import {
-  countResults,
-  getAllQuestions,
-  submitAnswer,
-} from "../../store/quiz/quizAction";
+import { getAllQuestions, submitAnswer } from "../../store/quiz/quizAction";
 
 const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
